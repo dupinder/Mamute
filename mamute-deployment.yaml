@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose.exe convert -f E:\repos\Github\mamute\docker-compose.yml
+    kompose.version: 1.19.0 (f63a961c)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mamute
+  name: mamute
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose.exe convert -f E:\repos\Github\mamute\docker-compose.yml
+        kompose.version: 1.19.0 (f63a961c)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: mamute
+    spec:
+      containers:
+      - env:
+        - name: MAMUTE_PORT
+          value: "8080"
+        - name: MYSQL_PASSWORD
+          value: mamute
+        image: jbasila/mamute:1.5.0
+        name: mamute
+        ports:
+        - containerPort: 80
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+status: {}

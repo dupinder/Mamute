@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose.exe convert -f E:\repos\Github\mamute\docker-compose.yml
+    kompose.version: 1.19.0 (f63a961c)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mamute
+  name: mamute
+spec:
+  ports:
+  - name: "8090"
+    port: 8090
+    targetPort: 80
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+  selector:
+    io.kompose.service: mamute
+status:
+  loadBalancer: {}
