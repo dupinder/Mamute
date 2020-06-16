@@ -7,17 +7,14 @@ metadata:
     kompose.version: 1.21.0 (992df58d8)
   creationTimestamp: null
   labels:
-    io.kompose.service: mamute
-  name: mamute
+    io.kompose.service: mysql-mamute
+  name: mysql-mamute
 spec:
   ports:
-  - name: "8090"
-    port: 8090
-    targetPort: 80
-  - name: "8080"
-    port: 8080
-    targetPort: 8080
+  - name: "3306"
+    port: 3306
+    targetPort: 3306
   selector:
-    io.kompose.service: mamute
+    io.kompose.service: mysql-mamute
 status:
   loadBalancer: {}

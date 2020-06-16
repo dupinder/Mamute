@@ -4,10 +4,10 @@ services:
     image: jbasila/mamute:1.5.0
     environment:
       MYSQL_PASSWORD: mamute
-      MAMUTE_PORT: 8080
+      MAMUTE_PORT: 8085
     ports:
-      - 8090:80
-      - 8080:8080
+      - 8095:80
+      - 8085:8085
     links:
       - mysql-mamute:mysql
 
