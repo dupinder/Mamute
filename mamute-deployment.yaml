@@ -27,8 +27,12 @@ spec:
     spec:
       containers:
       - env:
+        - name: MAMUTE_ATTACHMENTS_PATH
+          value: /tmp
+        - name: MAMUTE_HOST
+          value: 52.172.6.58
         - name: MAMUTE_PORT
-          value: "8080"
+          value: "8085"
         - name: MYSQL_PASSWORD
           value: mamute
         image: jbasila/mamute:1.5.0
@@ -36,7 +40,7 @@ spec:
         name: mamute
         ports:
         - containerPort: 80
-        - containerPort: 8080
+        - containerPort: 8085
         resources: {}
       restartPolicy: Always
       serviceAccountName: ""

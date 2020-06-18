@@ -44,11 +44,11 @@ spec:
         resources: {}
         volumeMounts:
         - mountPath: /var/lib/mysql
-          name: mysql-data
+          name: mysql-mamute-claim0
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
-      - name: mysql-data
+      - name: mysql-mamute-claim0
         persistentVolumeClaim:
-          claimName: mysql-data
+          claimName: mysql-mamute-claim0
 status: {}

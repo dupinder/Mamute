@@ -11,12 +11,12 @@ metadata:
   name: mamute
 spec:
   ports:
-  - name: "8090"
-    port: 8090
+  - name: "8095"
+    port: 8095
     targetPort: 80
-  - name: "8080"
-    port: 8080
-    targetPort: 8080
+  - name: "8085"
+    port: 8085
+    targetPort: 8085
   selector:
     io.kompose.service: mamute
 status:

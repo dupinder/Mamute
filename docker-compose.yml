@@ -5,6 +5,8 @@ services:
     environment:
       MYSQL_PASSWORD: mamute
       MAMUTE_PORT: 8085
+      MAMUTE_HOST: 52.172.6.58
+      MAMUTE_ATTACHMENTS_PATH: /tmp 
     ports:
       - 8095:80
       - 8085:8085
@@ -14,7 +16,7 @@ services:
   mysql-mamute:
     image: mysql:5.7.4
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: secretpassword
       MYSQL_DATABASE: mamute
@@ -22,5 +24,3 @@ services:
       MYSQL_PASSWORD: mamute
     expose:
       - 3306
-volumes:
-  mysql-data:
